@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
+app.set('trust proxy', 1);
 const userRoutes = require('./routes/user');
 const transaksiRoutes = require('./routes/transaksi');
 const budgetRoutes = require('./routes/budget');
