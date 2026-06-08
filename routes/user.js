@@ -25,7 +25,7 @@ router.post('/register', async function(req, res){
             new User({username, password: await bcrypt.hash(password, 10)}).save();
             res.json({message: 'Registrasi berhasil'})
         }
-    }catch{
+    }catch(err){
         console.log('Register error:', err)
         res.status(500).json({message : 'Terjadi Kesalahan Server'})
     }
