@@ -13,6 +13,7 @@ const Kategori = require('../models/Kategori');
 // route register
 router.post('/register', async function(req, res){
     try{
+        console.log('Register attempt:', req.body) 
         const {username, password} = req.body;
         if(password.length < 8){
             return res.status(400).json({message: 'Password minimal 8 karakter'})
@@ -25,6 +26,7 @@ router.post('/register', async function(req, res){
             res.json({message: 'Registrasi berhasil'})
         }
     }catch{
+        console.log('Register error:', err)
         res.status(500).json({message : 'Terjadi Kesalahan Server'})
     }
 })
