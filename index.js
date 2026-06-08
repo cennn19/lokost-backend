@@ -37,6 +37,7 @@ app.use('/api/kategori', kategoriRoutes);
 const path = require('path');
 app.use(express.static(path.join(__dirname, '../Lokost')));
 mongoose.connect(process.env.MONGODB_URI)
+console.log('MONGODB_URI:', process.env.MONGODB_URI)
 .then(function(){
         console.log('Terhubung ke MongoDB!')
     })
